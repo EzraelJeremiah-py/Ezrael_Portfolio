@@ -11,10 +11,22 @@ export default function Home() {
       .catch(err => console.error("Error fetching portfolio:", err));
   }, []);
 
-  if (!portfolio) return <p className="text-center mt-5">Loading...</p>;
+  if (!portfolio) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mt-5">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <a className="navbar-brand" href="#">Portfolio</a>
+      </nav>
+
       <h1 className="text-primary mb-4">
         {portfolio.contact.github.split("/").pop()}'s Portfolio
       </h1>
@@ -52,8 +64,16 @@ export default function Home() {
         <h2 className="text-danger">Contact</h2>
         <p>Email: {portfolio.contact.email}</p>
         <p>Alt Email: {portfolio.contact.email2}</p>
-        <p>GitHub: <a href={portfolio.contact.github} target="_blank" rel="noreferrer">{portfolio.contact.github}</a></p>
+        <p>
+          GitHub: <a href={portfolio.contact.github} target="_blank" rel="noreferrer">
+            {portfolio.contact.github}
+          </a>
+        </p>
       </section>
+
+      <footer className="bg-dark text-white text-center py-3 mt-5">
+        <small>© {new Date().getFullYear()} Ezrael Portfolio</small>
+      </footer>
     </div>
   );
 }
