@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Home() {
   const [portfolio, setPortfolio] = useState(null);
@@ -6,31 +7,53 @@ export default function Home() {
   useEffect(() => {
     fetch("https://ezrael-portfolio.onrender.com/api/portfolio")
       .then(res => res.json())
-      .then(data => setPortfolio(data));
+      .then(data => setPortfolio(data))
+      .catch(err => console.error("Error fetching portfolio:", err));
   }, []);
 
-  if (!portfolio) return <p>Loading...</p>;
+  if (!portfolio) return <p className="text-center mt-5">Loading...</p>;
 
   return (
-    <div>
-      <h1>{portfolio.contact.github.split("/").pop()}'s Portfolio</h1>
+    <div className="container mt-5">
+      <h1 className="text-primary mb-4">
+        {portfolio.contact.github.split("/").pop()}'s Portfolio
+      </h1>
 
-      <h2>Skills</h2>
-      <ul>{portfolio.skills.map((s, i) => <li key={i}>{s}</li>)}</ul>
+      <section className="mb-4">
+        <h2 className="text-success">Skills</h2>
+        <ul className="list-group">
+          {portfolio.skills.map((s, i) => (
+            <li key={i} className="list-group-item">{s}</li>
+          ))}
+        </ul>
+      </section>
 
-      <h2>Qualifications</h2>
-      <ul>{portfolio.qualifications.map((q, i) => <li key={i}>{q}</li>)}</ul>
+      <section className="mb-4">
+        <h2 className="text-info">Qualifications</h2>
+        <ul className="list-group">
+          {portfolio.qualifications.map((q, i) => (
+            <li key={i} className="list-group-item">{q}</li>
+          ))}
+        </ul>
+      </section>
 
-      <h2>Projects</h2>
-      <ul>{portfolio.projects.map((p, i) => (
-        <li key={i}><strong>{p.name}</strong>: {p.desc}</li>
-      ))}</ul>
+      <section className="mb-4">
+        <h2 className="text-warning">Projects</h2>
+        <ul className="list-group">
+          {portfolio.projects.map((p, i) => (
+            <li key={i} className="list-group-item">
+              <strong>{p.name}</strong>: {p.desc}
+            </li>
+          ))}
+        </ul>
+      </section>
 
-      <h2>Contact</h2>
-      <p>Email: {portfolio.contact.email}</p>
-      <p>Alt Email: {portfolio.contact.email2}</p>
-      <p>GitHub: {portfolio.contact.github}</p>
+      <section>
+        <h2 className="text-danger">Contact</h2>
+        <p>Email: {portfolio.contact.email}</p>
+        <p>Alt Email: {portfolio.contact.email2}</p>
+        <p>GitHub: <a href={portfolio.contact.github} target="_blank" rel="noreferrer">{portfolio.contact.github}</a></p>
+      </section>
     </div>
   );
 }
-
