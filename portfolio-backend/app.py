@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # allow frontend (Vercel) to fetch data
+CORS(app)  # allow frontend (Vercel) to fetch
 
 portfolio = {
     "skills": ["Flask", "Data Science", "Machine Learning", "IT / ICT", "YII2 Framework"],
