@@ -4,7 +4,7 @@ export default function Home() {
   const [portfolio, setPortfolio] = useState(null);
 
   useEffect(() => {
-    fetch("https://ezrael-portfolio.onrender.com")
+    fetch("https://ezrael-portfolio.onrender.com/api/portfolio")
       .then(res => res.json())
       .then(data => setPortfolio(data));
   }, []);
