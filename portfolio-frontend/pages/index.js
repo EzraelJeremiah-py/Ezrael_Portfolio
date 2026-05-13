@@ -22,58 +22,80 @@ export default function Home() {
   }
 
   return (
-    <div className="container mt-5">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <a className="navbar-brand" href="#">Portfolio</a>
+    <>
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container">
+          <a className="navbar-brand fw-bold" href="#">Ezrael Portfolio</a>
+        </div>
       </nav>
 
-      <h1 className="text-primary mb-4">
-        {portfolio.contact.github.split("/").pop()}'s Portfolio
-      </h1>
+      {/* Hero Section */}
+      <header className="bg-primary text-white text-center py-5 mb-4">
+        <div className="container">
+          <h1 className="display-4">
+            {portfolio.contact.github.split("/").pop()}
+          </h1>
+          <p className="lead">Welcome to my professional portfolio</p>
+        </div>
+      </header>
 
-      <section className="mb-4">
-        <h2 className="text-success">Skills</h2>
-        <ul className="list-group">
+      <main className="container">
+        {/* Skills */}
+        <section className="mb-5">
+          <h2 className="text-success mb-3">Skills</h2>
           {portfolio.skills.map((s, i) => (
-            <li key={i} className="list-group-item">{s}</li>
+            <span key={i} className="badge bg-success me-2 mb-2">{s}</span>
           ))}
-        </ul>
-      </section>
+        </section>
 
-      <section className="mb-4">
-        <h2 className="text-info">Qualifications</h2>
-        <ul className="list-group">
-          {portfolio.qualifications.map((q, i) => (
-            <li key={i} className="list-group-item">{q}</li>
-          ))}
-        </ul>
-      </section>
+        {/* Qualifications */}
+        <section className="mb-5">
+          <h2 className="text-info mb-3">Qualifications</h2>
+          <ul className="list-group">
+            {portfolio.qualifications.map((q, i) => (
+              <li key={i} className="list-group-item">
+                <i className="bi bi-mortarboard-fill me-2"></i>{q}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      <section className="mb-4">
-        <h2 className="text-warning">Projects</h2>
-        <ul className="list-group">
-          {portfolio.projects.map((p, i) => (
-            <li key={i} className="list-group-item">
-              <strong>{p.name}</strong>: {p.desc}
-            </li>
-          ))}
-        </ul>
-      </section>
+        {/* Projects */}
+        <section className="mb-5">
+          <h2 className="text-warning mb-3">Projects</h2>
+          <div className="row">
+            {portfolio.projects.map((p, i) => (
+              <div className="col-md-4 mb-3" key={i}>
+                <div className="card shadow-sm h-100">
+                  <div className="card-body">
+                    <h5 className="card-title">{p.name}</h5>
+                    <p className="card-text">{p.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      <section>
-        <h2 className="text-danger">Contact</h2>
-        <p>Email: {portfolio.contact.email}</p>
-        <p>Alt Email: {portfolio.contact.email2}</p>
-        <p>
-          GitHub: <a href={portfolio.contact.github} target="_blank" rel="noreferrer">
-            {portfolio.contact.github}
-          </a>
-        </p>
-      </section>
+        {/* Contact */}
+        <section className="mb-5">
+          <h2 className="text-danger mb-3">Contact</h2>
+          <p><i className="bi bi-envelope-fill me-2"></i>{portfolio.contact.email}</p>
+          <p><i className="bi bi-envelope me-2"></i>{portfolio.contact.email2}</p>
+          <p>
+            <i className="bi bi-github me-2"></i>
+            <a href={portfolio.contact.github} target="_blank" rel="noreferrer">
+              {portfolio.contact.github}
+            </a>
+          </p>
+        </section>
+      </main>
 
+      {/* Footer */}
       <footer className="bg-dark text-white text-center py-3 mt-5">
         <small>© {new Date().getFullYear()} Ezrael Portfolio</small>
       </footer>
-    </div>
+    </>
   );
 }
