@@ -23,7 +23,7 @@ export default function Home() {
   }
 
   return (
-    <div className={darkMode ? "bg-dark text-white min-vh-100" : "bg-light min-vh-100"}>
+    <div className={`${darkMode ? "bg-dark text-white" : "bg-light"} min-vh-100 d-flex flex-column`}>
       {/* Navbar */}
       <nav className={`navbar navbar-expand-lg ${darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"} shadow-sm`}>
         <div className="container d-flex justify-content-between">
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Animated Gradient */}
+      {/* Hero Section */}
       <header 
         className="text-center py-5 mb-4 text-white" 
         style={{
@@ -54,90 +54,82 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="container">
-        {/* Skills */}
-        <section className="mb-5">
-          <h2 className="text-success mb-3">Skills</h2>
-          {portfolio.skills.map((s, i) => (
-            <span key={i} className="badge bg-success me-2 mb-2 fs-6">{s}</span>
-          ))}
-        </section>
-
-        {/* Qualifications */}
-        <section className="mb-5">
-          <h2 className="text-info mb-3">Qualifications</h2>
-          <ul className="list-group list-group-flush shadow-sm">
-            {portfolio.qualifications.map((q, i) => (
-              <li key={i} className={`list-group-item ${darkMode ? "bg-dark text-white" : ""}`}>
-                <i className="bi bi-mortarboard-fill me-2 text-info"></i>{q}
-              </li>
+      {/* Main Content Centered */}
+      <main className="flex-grow-1 d-flex justify-content-center">
+        <div className="container text-center">
+          {/* Skills */}
+          <section className="mb-5">
+            <h2 className="text-success mb-3">Skills</h2>
+            {portfolio.skills.map((s, i) => (
+              <span key={i} className="badge bg-success me-2 mb-2 fs-6">{s}</span>
             ))}
-          </ul>
-        </section>
+          </section>
 
-        {/* Projects */}
-        <section className="mb-5">
-          <h2 className="text-warning mb-3">Projects</h2>
-          <div className="row">
-            {portfolio.projects.map((p, i) => (
-              <div className="col-md-4 mb-3" key={i}>
-                <div className={`card shadow-lg h-100 border-0 ${darkMode ? "bg-dark text-white" : ""}`}>
-                  <div className="card-body">
-                    <h5 className="card-title text-primary">{p.name}</h5>
-                    {p.desc.startsWith("http") ? (
-                      <a href={p.desc} target="_blank" rel="noreferrer" className="btn btn-outline-primary mt-2">
-                        🔗 View Project
-                      </a>
-                    ) : (
-                      <p className="card-text">{p.desc}</p>
-                    )}
+          {/* Qualifications */}
+          <section className="mb-5">
+            <h2 className="text-info mb-3">Qualifications</h2>
+            <ul className="list-group list-group-flush shadow-sm d-inline-block text-start">
+              {portfolio.qualifications.map((q, i) => (
+                <li key={i} className={`list-group-item ${darkMode ? "bg-dark text-white" : ""}`}>
+                  <i className="bi bi-mortarboard-fill me-2 text-info"></i>{q}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Projects */}
+          <section className="mb-5">
+            <h2 className="text-warning mb-3">Projects</h2>
+            <div className="row justify-content-center">
+              {portfolio.projects.map((p, i) => (
+                <div className="col-md-4 mb-3" key={i}>
+                  <div className={`card shadow-lg h-100 border-0 ${darkMode ? "bg-dark text-white" : ""}`}>
+                    <div className="card-body">
+                      <h5 className="card-title text-primary">{p.name}</h5>
+                      {p.desc.startsWith("http") ? (
+                        <a href={p.desc} target="_blank" rel="noreferrer" className="btn btn-outline-primary mt-2">
+                          🔗 View Project
+                        </a>
+                      ) : (
+                        <p className="card-text">{p.desc}</p>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
 
-        {/* Contact */}
-        <section className="mb-5">
-          <h2 className="text-danger mb-3">Contact</h2>
-
-          {/* Emails */}
-          <p>
-            <i className="bi bi-envelope-fill me-2 text-primary"></i>
-            <a href={`mailto:${portfolio.contact.email}`} className="text-primary text-decoration-none">
-              {portfolio.contact.email}
-            </a>
-          </p>
-          <p>
-            <i className="bi bi-envelope me-2 text-primary"></i>
-            <a href={`mailto:${portfolio.contact.email2}`} className="text-primary text-decoration-none">
-              {portfolio.contact.email2}
-            </a>
-          </p>
-
-          {/* Phones */}
-          <p>
-            <i className="bi bi-telephone-fill me-2 text-primary"></i>
-            <a href={`tel:${portfolio.contact.phone}`} className="text-primary text-decoration-none">
-              {portfolio.contact.phone}
-            </a>
-          </p>
-          <p>
-            <i className="bi bi-telephone me-2 text-primary"></i>
-            <a href={`tel:${portfolio.contact.phone2}`} className="text-primary text-decoration-none">
-              {portfolio.contact.phone2}
-            </a>
-          </p>
-
-          {/* GitHub */}
-          <p>
-            <i className="bi bi-github me-2 text-primary"></i>
-            <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="text-primary text-decoration-none">
-              {portfolio.contact.github}
-            </a>
-          </p>
-        </section>
+          {/* Contact */}
+          <section className="mb-5">
+            <h2 className="text-danger mb-3">Contact</h2>
+            <p><i className="bi bi-envelope-fill me-2 text-primary"></i>
+              <a href={`mailto:${portfolio.contact.email}`} className="text-primary text-decoration-none">
+                {portfolio.contact.email}
+              </a>
+            </p>
+            <p><i className="bi bi-envelope me-2 text-primary"></i>
+              <a href={`mailto:${portfolio.contact.email2}`} className="text-primary text-decoration-none">
+                {portfolio.contact.email2}
+              </a>
+            </p>
+            <p><i className="bi bi-telephone-fill me-2 text-primary"></i>
+              <a href={`tel:${portfolio.contact.phone}`} className="text-primary text-decoration-none">
+                {portfolio.contact.phone}
+              </a>
+            </p>
+            <p><i className="bi bi-telephone me-2 text-primary"></i>
+              <a href={`tel:${portfolio.contact.phone2}`} className="text-primary text-decoration-none">
+                {portfolio.contact.phone2}
+              </a>
+            </p>
+            <p><i className="bi bi-github me-2 text-primary"></i>
+              <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="text-primary text-decoration-none">
+                {portfolio.contact.github}
+              </a>
+            </p>
+          </section>
+        </div>
       </main>
 
       {/* Footer */}
@@ -145,7 +137,7 @@ export default function Home() {
         <small>© {new Date().getFullYear()} Ezrael Portfolio | Built with Next.js & Flask</small>
       </footer>
 
-      {/* Gradient Animation CSS */}
+      {/* Gradient Animation */}
       <style jsx>{`
         @keyframes gradientMove {
           0% { background-position: 0% 50%; }
