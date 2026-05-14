@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import EzGPT from "../components/EzGPT";
 
 
 export default function Home() {
@@ -136,8 +135,7 @@ export default function Home() {
         <small>© {new Date().getFullYear()} Ezrael Portfolio | Built with Next.js & Flask</small>
       </footer>
 
-      {/* EzGPT Chatbot */}
-      <EzGPT />
+     
 
       {/* Gradient Animation CSS */}
       <style jsx>{`
