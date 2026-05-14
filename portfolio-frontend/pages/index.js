@@ -102,32 +102,27 @@ export default function Home() {
         {/* Contact */}
         <section className="mb-5">
           <h2 className="text-danger mb-3">Contact</h2>
-          <p>
-            <i className="bi bi-envelope-fill me-2 text-primary"></i>
+          <p><i className="bi bi-envelope-fill me-2 text-primary"></i>
             <a href={`mailto:${portfolio.contact.email}`} className="text-primary text-decoration-none">
               {portfolio.contact.email}
             </a>
           </p>
-          <p>
-            <i className="bi bi-envelope me-2 text-primary"></i>
+          <p><i className="bi bi-envelope me-2 text-primary"></i>
             <a href={`mailto:${portfolio.contact.email2}`} className="text-primary text-decoration-none">
               {portfolio.contact.email2}
             </a>
           </p>
-          <p>
-            <i className="bi bi-telephone-fill me-2 text-primary"></i>
+          <p><i className="bi bi-telephone-fill me-2 text-primary"></i>
             <a href={`tel:${portfolio.contact.phone}`} className="text-primary text-decoration-none">
               {portfolio.contact.phone}
             </a>
           </p>
-          <p>
-            <i className="bi bi-telephone me-2 text-primary"></i>
+          <p><i className="bi bi-telephone me-2 text-primary"></i>
             <a href={`tel:${portfolio.contact.phone2}`} className="text-primary text-decoration-none">
               {portfolio.contact.phone2}
             </a>
           </p>
-          <p>
-            <i className="bi bi-github me-2 text-primary"></i>
+          <p><i className="bi bi-github me-2 text-primary"></i>
             <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="text-primary text-decoration-none">
               {portfolio.contact.github}
             </a>
