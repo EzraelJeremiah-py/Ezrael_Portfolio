@@ -5,16 +5,18 @@ app = Flask(__name__)
 CORS(app)  # allow frontend (Vercel) to fetch
 
 portfolio = {
-    "skills": ["Flask", "Data Science", "Machine Learning", "IT / ICT", "YII2 Framework"],
-    "qualifications": ["BSc Computer Science", "Intermediate Flask Developer"],
+    "skills": ["Data analysis....using Excel, Python, R ", "Systems/website developer.....python, PHP, HTML, CSS, Javascripts","Flameworks.....Flask, Yii2, React JS, Next JS,"Machine Learning", ICT devices", ],
+    "qualifications": ["BSc Data Science", "IT", "COMMUNICATION SKILLS"],
     "projects": [
-        {"name": "IoT Device Monitoring", "desc": "Simulated dashboard for sensors"},
-        {"name": "Data Analysis", "desc": "Analysis of data using Python, PyExcel and R"},
-        {"name": "AI powered parent engagement school system", "desc": "NLP pipeline for reviews"}
+        {"name": "IT/ICT ", "desc": "Software and Hardware troubleshooting, devices configurations....programs installations,networking configurations"},
+        {"name": "music services advertisements", "desc": "https://ezraeljeremiah-py.github.io/music_web_site/"},
+        {"name": "AI powered parent engagement school system", "desc": "On progress project"}
     ],
     "contact": {
         "email": "ezraeljeremaih@outlook.com",
         "email2": "ezrajeremiah14@gmail.com",
+        "phone":+265991626001......whatsapp",
+        "phone2":0620150832...online/offline,
         "github": "https://github.com/EzraelJeremiah-py"
     }
 }
