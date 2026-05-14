@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Animated Gradient */}
+      {/* Hero Section */}
       <header 
         className="text-center py-5 mb-4 text-white" 
         style={{
@@ -102,8 +102,6 @@ export default function Home() {
         {/* Contact */}
         <section className="mb-5">
           <h2 className="text-danger mb-3">Contact</h2>
-
-          {/* Emails */}
           <p>
             <i className="bi bi-envelope-fill me-2 text-primary"></i>
             <a href={`mailto:${portfolio.contact.email}`} className="text-primary text-decoration-none">
@@ -116,8 +114,6 @@ export default function Home() {
               {portfolio.contact.email2}
             </a>
           </p>
-
-          {/* Phones */}
           <p>
             <i className="bi bi-telephone-fill me-2 text-primary"></i>
             <a href={`tel:${portfolio.contact.phone}`} className="text-primary text-decoration-none">
@@ -130,8 +126,6 @@ export default function Home() {
               {portfolio.contact.phone2}
             </a>
           </p>
-
-          {/* GitHub */}
           <p>
             <i className="bi bi-github me-2 text-primary"></i>
             <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="text-primary text-decoration-none">
