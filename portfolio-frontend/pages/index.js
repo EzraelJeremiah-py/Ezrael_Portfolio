@@ -37,8 +37,15 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header className={`text-center py-5 mb-4 ${darkMode ? "bg-secondary text-white" : "bg-primary text-white"}`}>
+      {/* Hero Section with Growing Gradient */}
+      <header 
+        className="text-center py-5 mb-4 text-white" 
+        style={{
+          background: "linear-gradient(270deg, #0d6efd, #6610f2, #20c997)",
+          backgroundSize: "600% 600%",
+          animation: "gradientMove 15s ease infinite"
+        }}
+      >
         <div className="container">
           <h1 className="display-4 fw-bold">
             {portfolio.contact.github.split("/").pop()}
@@ -77,7 +84,13 @@ export default function Home() {
                 <div className={`card shadow-lg h-100 border-0 ${darkMode ? "bg-dark text-white" : ""}`}>
                   <div className="card-body">
                     <h5 className="card-title text-primary">{p.name}</h5>
-                    <p className="card-text">{p.desc}</p>
+                    {p.desc.startsWith("http") ? (
+                      <a href={p.desc} target="_blank" rel="noreferrer" className="btn btn-outline-primary mt-2">
+                        🔗 View Project
+                      </a>
+                    ) : (
+                      <p className="card-text">{p.desc}</p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -103,6 +116,15 @@ export default function Home() {
       <footer className={`text-center py-3 mt-5 ${darkMode ? "bg-secondary text-white" : "bg-dark text-white"}`}>
         <small>© {new Date().getFullYear()} Ezrael Portfolio | Built with Next.js & Flask</small>
       </footer>
+
+      {/* Gradient Animation CSS */}
+      <style jsx>{`
+        @keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </div>
   );
 }
