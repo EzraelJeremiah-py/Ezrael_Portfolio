@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import EzGPT from "../components/EzGPT";
 
+
 export default function Home() {
   const [portfolio, setPortfolio] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
