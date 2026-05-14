@@ -10,9 +10,7 @@ portfolio = {
         "Systems/website development (Python, PHP, HTML, CSS, JavaScript)",
         "Frameworks (Flask, Yii2, React.js, Next.js)",
         "Machine Learning",
-        "ICT devices",
-        "React.js",
-        "JavaScript"
+        "ICT devices"
     ],
     "qualifications": [
         "BSc Data Science",
@@ -36,8 +34,8 @@ portfolio = {
     "contact": {
         "email": "ezraeljeremaih@outlook.com",
         "email2": "ezrajeremiah14@gmail.com",
-        "phone": "+265991626001 (WhatsApp)",
         "phone2": "0620150832 (online/offline)",
+        "phone": "+265991626001 (WhatsApp)",
         "github": "https://github.com/EzraelJeremiah-py"
     }
 }
