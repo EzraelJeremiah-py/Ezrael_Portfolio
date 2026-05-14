@@ -97,21 +97,29 @@ export default function Home() {
             ))}
           </div>
         </section>
+            {/* Contact */}
+<section className="mb-5">
+  <h2 className="text-danger mb-3">Contact</h2>
+  <p className="text-primary">
+  <i className="bi bi-envelope-fill me-2"></i>{portfolio.contact.email}
+  </p>
+  <p className="text-primary">
+  <i className="bi bi-envelope me-2"></i>{portfolio.contact.email2}
+  </p>
+  <p className="text-primary">
+  <i className="bi bi-telephone-fill me-2"></i>{portfolio.contact.phone}
+  </p>
+  <p className="text-primary">
+  <i className="bi bi-telephone me-2"></i>{portfolio.contact.phone2}
+  </p>
+  <p className="text-primary">
+  <i className="bi bi-github me-2"></i>
+  <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="text-primary text-decoration-none">
+{portfolio.contact.github}
+</a>
+  </p>
+  </section>
 
-        {/* Contact */}
-        <section className="mb-5">
-          <h2 className="text-danger mb-3">Contact</h2>
-          <p><i className="bi bi-envelope-fill me-2 text-danger"></i>{portfolio.contact.email}</p>
-          <p><i className="bi bi-envelope me-2 text-secondary"></i>{portfolio.contact.email2}</p>
-          <p><i className="bi bi-telephone-fill me-2 text-success"></i>{portfolio.contact.phone2}</p>
-          <p><i className="bi bi-telephone me-2 text-warning"></i>{portfolio.contact.phone}</p>
-          <p>
-            <i className="bi bi-github me-2 text-dark"></i>
-            <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className={darkMode ? "text-white" : "text-dark"}>
-              {portfolio.contact.github}
-            </a>
-          </p>
-        </section>
       </main>
 
       {/* Footer */}
