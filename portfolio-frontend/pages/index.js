@@ -1,15 +1,6 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import EzGPT from "../components/EzGPT";
-export default function Home() {
-  return (
-    <>
-  {/* existing portfolio content */}
-    <EzGPT />
-    </>
-    );
-}
-
 
 export default function Home() {
   const [portfolio, setPortfolio] = useState(null);
@@ -154,6 +145,9 @@ export default function Home() {
       <footer className={`text-center py-3 mt-5 ${darkMode ? "bg-secondary text-white" : "bg-dark text-white"}`}>
         <small>© {new Date().getFullYear()} Ezrael Portfolio | Built with Next.js & Flask</small>
       </footer>
+
+      {/* EzGPT Chatbot */}
+      <EzGPT />
 
       {/* Gradient Animation CSS */}
       <style jsx>{`
