@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Growing Gradient */}
+      {/* Hero Section with Animated Gradient */}
       <header 
         className="text-center py-5 mb-4 text-white" 
         style={{
@@ -97,29 +97,47 @@ export default function Home() {
             ))}
           </div>
         </section>
-            {/* Contact */}
-<section className="mb-5">
-  <h2 className="text-danger mb-3">Contact</h2>
-  <p className="text-primary">
-  <i className="bi bi-envelope-fill me-2"></i>{portfolio.contact.email}
-  </p>
-  <p className="text-primary">
-  <i className="bi bi-envelope me-2"></i>{portfolio.contact.email2}
-  </p>
-  <p className="text-primary">
-  <i className="bi bi-telephone-fill me-2"></i>{portfolio.contact.phone}
-  </p>
-  <p className="text-primary">
-  <i className="bi bi-telephone me-2"></i>{portfolio.contact.phone2}
-  </p>
-  <p className="text-primary">
-  <i className="bi bi-github me-2"></i>
-  <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="text-primary text-decoration-none">
-{portfolio.contact.github}
-</a>
-  </p>
-  </section>
 
+        {/* Contact */}
+        <section className="mb-5">
+          <h2 className="text-danger mb-3">Contact</h2>
+
+          {/* Emails */}
+          <p>
+            <i className="bi bi-envelope-fill me-2 text-primary"></i>
+            <a href={`mailto:${portfolio.contact.email}`} className="text-primary text-decoration-none">
+              {portfolio.contact.email}
+            </a>
+          </p>
+          <p>
+            <i className="bi bi-envelope me-2 text-primary"></i>
+            <a href={`mailto:${portfolio.contact.email2}`} className="text-primary text-decoration-none">
+              {portfolio.contact.email2}
+            </a>
+          </p>
+
+          {/* Phones */}
+          <p>
+            <i className="bi bi-telephone-fill me-2 text-primary"></i>
+            <a href={`tel:${portfolio.contact.phone}`} className="text-primary text-decoration-none">
+              {portfolio.contact.phone}
+            </a>
+          </p>
+          <p>
+            <i className="bi bi-telephone me-2 text-primary"></i>
+            <a href={`tel:${portfolio.contact.phone2}`} className="text-primary text-decoration-none">
+              {portfolio.contact.phone2}
+            </a>
+          </p>
+
+          {/* GitHub */}
+          <p>
+            <i className="bi bi-github me-2 text-primary"></i>
+            <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="text-primary text-decoration-none">
+              {portfolio.contact.github}
+            </a>
+          </p>
+        </section>
       </main>
 
       {/* Footer */}
