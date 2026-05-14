@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 export default function Home() {
   const [portfolio, setPortfolio] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
@@ -38,7 +37,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with Animated Gradient */}
       <header 
         className="text-center py-5 mb-4 text-white" 
         style={{
@@ -102,27 +101,38 @@ export default function Home() {
         {/* Contact */}
         <section className="mb-5">
           <h2 className="text-danger mb-3">Contact</h2>
-          <p><i className="bi bi-envelope-fill me-2 text-primary"></i>
+
+          {/* Emails */}
+          <p>
+            <i className="bi bi-envelope-fill me-2 text-primary"></i>
             <a href={`mailto:${portfolio.contact.email}`} className="text-primary text-decoration-none">
               {portfolio.contact.email}
             </a>
           </p>
-          <p><i className="bi bi-envelope me-2 text-primary"></i>
+          <p>
+            <i className="bi bi-envelope me-2 text-primary"></i>
             <a href={`mailto:${portfolio.contact.email2}`} className="text-primary text-decoration-none">
               {portfolio.contact.email2}
             </a>
           </p>
-          <p><i className="bi bi-telephone-fill me-2 text-primary"></i>
+
+          {/* Phones */}
+          <p>
+            <i className="bi bi-telephone-fill me-2 text-primary"></i>
             <a href={`tel:${portfolio.contact.phone}`} className="text-primary text-decoration-none">
               {portfolio.contact.phone}
             </a>
           </p>
-          <p><i className="bi bi-telephone me-2 text-primary"></i>
+          <p>
+            <i className="bi bi-telephone me-2 text-primary"></i>
             <a href={`tel:${portfolio.contact.phone2}`} className="text-primary text-decoration-none">
               {portfolio.contact.phone2}
             </a>
           </p>
-          <p><i className="bi bi-github me-2 text-primary"></i>
+
+          {/* GitHub */}
+          <p>
+            <i className="bi bi-github me-2 text-primary"></i>
             <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="text-primary text-decoration-none">
               {portfolio.contact.github}
             </a>
@@ -134,8 +144,6 @@ export default function Home() {
       <footer className={`text-center py-3 mt-5 ${darkMode ? "bg-secondary text-white" : "bg-dark text-white"}`}>
         <small>© {new Date().getFullYear()} Ezrael Portfolio | Built with Next.js & Flask</small>
       </footer>
-
-     
 
       {/* Gradient Animation CSS */}
       <style jsx>{`
