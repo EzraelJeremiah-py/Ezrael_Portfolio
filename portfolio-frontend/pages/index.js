@@ -73,7 +73,7 @@ export default function Home() {
   key={i} 
   className="badge me-2 mb-2 fs-6 shadow-sm"
     style={{
-      backgroundColor: "lightgreen",
+      backgroundColor: "black",
       color: "gold",
       fontWeight: "bold",
       padding: "0.6rem 1rem",
