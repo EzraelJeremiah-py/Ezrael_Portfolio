@@ -48,10 +48,10 @@ export default function Home() {
         }}
       >
         <div className="container-fluid">
-          <h1 className="display-4 fw-bold">
+          <h1 className="hero-title fw-bold">
             {portfolio.contact.github.split("/").pop()}
           </h1>
-          <p className="lead">Crafting code & ideas into reality</p>
+          <p className="hero-tagline">Crafting code & ideas into reality</p>
         </div>
       </header>
 
@@ -151,12 +151,26 @@ export default function Home() {
         <small>© {new Date().getFullYear()} Ezrael Portfolio | Built with Next.js & Flask</small>
       </footer>
 
-      {/* Gradient Animation */}
+      {/* Gradient Animation + Responsive Fonts */}
       <style jsx>{`
         @keyframes gradientMove {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
+        }
+        .hero-title {
+          font-size: 3rem;
+        }
+        .hero-tagline {
+          font-size: 1.25rem;
+        }
+        @media (max-width: 576px) {
+          .hero-title {
+            font-size: 2rem;
+          }
+          .hero-tagline {
+            font-size: 1rem;
+          }
         }
       `}</style>
     </div>
