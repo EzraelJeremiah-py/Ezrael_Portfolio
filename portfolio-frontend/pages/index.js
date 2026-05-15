@@ -64,18 +64,28 @@ export default function Home() {
               <span key={i} className="badge bg-success me-2 mb-2 fs-6">{s}</span>
             ))}
           </section>
-
           {/* Qualifications */}
-          <section className="mb-5">
-            <h2 className="text-info mb-3">Qualifications</h2>
-            <ul className="list-group list-group-flush shadow-sm d-inline-block text-start">
-              {portfolio.qualifications.map((q, i) => (
-                <li key={i} className={`list-group-item ${darkMode ? "bg-dark text-white" : ""}`}>
-                  <i className="bi bi-mortarboard-fill me-2 text-info"></i>{q}
-                </li>
-              ))}
-            </ul>
-          </section>
+<section className="mb-5">
+  <h2 className="text-info mb-3">Qualifications</h2>
+  <div className="d-flex flex-wrap justify-content-center">
+{portfolio.qualifications.map((q, i) => (
+  <span 
+  key={i} 
+  className="badge me-2 mb-2 fs-6 shadow-sm"
+    style={{
+      backgroundColor: "lightgreen",
+      color: "gold",
+      fontWeight: "bold",
+      padding: "0.6rem 1rem",
+      borderRadius: "0.5rem"
+    }}
+>
+  <i className="bi bi-mortarboard-fill me-2"></i>{q}
+  </span>
+  ))}
+    </div>
+    </section>
+
 
           {/* Projects */}
           <section className="mb-5">
