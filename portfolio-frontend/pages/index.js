@@ -24,9 +24,10 @@ export default function Home() {
 
   return (
     <div className={`${darkMode ? "bg-dark text-white" : "bg-light"} min-vh-100 d-flex flex-column`}>
+      
       {/* Navbar */}
       <nav className={`navbar navbar-expand-lg ${darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"} shadow-sm`}>
-        <div className="container d-flex justify-content-between">
+        <div className="container-fluid d-flex justify-content-between">
           <a className="navbar-brand fw-bold" href="#">Ezrael Portfolio</a>
           <button 
             className="btn btn-outline-secondary"
@@ -46,7 +47,7 @@ export default function Home() {
           animation: "gradientMove 15s ease infinite"
         }}
       >
-        <div className="container">
+        <div className="container-fluid">
           <h1 className="display-4 fw-bold">
             {portfolio.contact.github.split("/").pop()}
           </h1>
@@ -54,9 +55,10 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content Centered */}
+      {/* Main Content */}
       <main className="flex-grow-1 d-flex justify-content-center">
-        <div className="container text-center">
+        <div className="container-fluid text-center px-3">
+          
           {/* Skills */}
           <section className="mb-5">
             <h2 className="text-success mb-3">Skills</h2>
@@ -64,35 +66,37 @@ export default function Home() {
               <span key={i} className="badge bg-success me-2 mb-2 fs-6">{s}</span>
             ))}
           </section>
-          {/* Qualifications */}
-<section className="mb-5">
-  <h2 className="text-info mb-3">Qualifications</h2>
-  <div className="d-flex flex-wrap justify-content-center">
-{portfolio.qualifications.map((q, i) => (
-  <span 
-  key={i} 
-  className="badge me-2 mb-2 fs-6 shadow-sm"
-    style={{
-      backgroundColor: "black",
-      color: "gold",
-      fontWeight: "bold",
-      padding: "0.6rem 1rem",
-      borderRadius: "0.5rem"
-    }}
->
-  <i className="bi bi-mortarboard-fill me-2"></i>{q}
-  </span>
-  ))}
-    </div>
-    </section>
 
+          {/* Qualifications */}
+          <section className="mb-5">
+            <h2 className="text-info mb-3">Qualifications</h2>
+            <div className="d-flex flex-wrap justify-content-center">
+              {portfolio.qualifications.map((q, i) => (
+                <span 
+                  key={i} 
+                  className="badge me-2 mb-2 fs-6 shadow-sm"
+                  style={{
+                    backgroundColor: "black",
+                    color: "gold",
+                    fontWeight: "bold",
+                    padding: "0.6rem 1rem",
+                    borderRadius: "0.5rem",
+                    whiteSpace: "normal",
+                    textAlign: "center"
+                  }}
+                >
+                  <i className="bi bi-mortarboard-fill me-2"></i>{q}
+                </span>
+              ))}
+            </div>
+          </section>
 
           {/* Projects */}
           <section className="mb-5">
             <h2 className="text-warning mb-3">Projects</h2>
             <div className="row justify-content-center">
               {portfolio.projects.map((p, i) => (
-                <div className="col-md-4 mb-3" key={i}>
+                <div className="col-12 col-md-4 mb-3" key={i}>
                   <div className={`card shadow-lg h-100 border-0 ${darkMode ? "bg-dark text-white" : ""}`}>
                     <div className="card-body">
                       <h5 className="card-title text-primary">{p.name}</h5>
