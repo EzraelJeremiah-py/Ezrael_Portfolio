@@ -1,4 +1,4 @@
-// portfoio-frontend/pages/index.js
+// portfolio-frontend/pages/index.js
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 
@@ -6,7 +6,6 @@ export default function Home() {
   const [portfolio, setPortfolio] = useState(null);
 
   useEffect(() => {
-    // Replace with your Render backend URL
     fetch("https://ernestmanyama.onrender.com/api/portfolio")
       .then(res => res.json())
       .then(data => setPortfolio(data))
@@ -17,40 +16,63 @@ export default function Home() {
 
   return (
     <Layout>
-      <section id="about">
-        <h1>{portfolio.name}</h1>
-        <p>{portfolio.about}</p>
+      {/* Hero Section */}
+      <section className="text-center py-5 bg-dark text-white">
+        <h1 className="display-4">{portfolio.name}</h1>
+        <p className="lead">{portfolio.about}</p>
       </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul>
+      {/* Skills */}
+      <section className="container my-5">
+        <h2 className="mb-4 text-primary">Skills</h2>
+        <div className="row">
           {portfolio.skills.map(skill => (
-            <li key={skill}>{skill}</li>
+            <div key={skill} className="col-6 col-md-3 mb-3">
+              <div className="card shadow-sm h-100 text-center">
+                <div className="card-body">
+                  <h5 className="card-title">{skill}</h5>
+                </div>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
-      <section id="projects">
-        <h2>Projects</h2>
-        {portfolio.projects.map(project => (
-          <div key={project.title} style={{ marginBottom: "20px" }}>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noreferrer">
-              View Project
-            </a>
-          </div>
-        ))}
+      {/* Projects */}
+      <section className="container my-5">
+        <h2 className="mb-4 text-success">Projects</h2>
+        <div className="row">
+          {portfolio.projects.map(project => (
+            <div key={project.title} className="col-md-6 mb-4">
+              <div className="card shadow-lg h-100">
+                <div className="card-body">
+                  <h3 className="card-title">{project.title}</h3>
+                  <p className="card-text">{project.description}</p>
+                  <a href={project.link} target="_blank" rel="noreferrer" className="btn btn-outline-success">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href={`mailto:${portfolio.contact.email}`}>{portfolio.contact.email}</a></p>
-        <p><a href={portfolio.contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></p>
-        <p><a href={portfolio.contact.github} target="_blank" rel="noreferrer">GitHub</a></p>
+      {/* Contact */}
+      <section className="container my-5">
+        <h2 className="mb-4 text-danger">Contact</h2>
+        <div className="d-flex flex-wrap gap-3">
+          <a href={`mailto:${portfolio.contact.email}`} className="btn btn-outline-dark">
+            📧 Email
+          </a>
+          <a href={portfolio.contact.linkedin} target="_blank" rel="noreferrer" className="btn btn-outline-primary">
+            🔗 LinkedIn
+          </a>
+          <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="btn btn-outline-secondary">
+            💻 GitHub
+          </a>
+        </div>
       </section>
     </Layout>
   );
 }
-
