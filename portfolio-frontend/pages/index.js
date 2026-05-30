@@ -58,14 +58,25 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-grow-1 d-flex justify-content-center">
         <div className="container-fluid text-center px-3">
-          
-          {/* Skills */}
-          <section className="mb-5">
-            <h2 className="text-success mb-3">Skills</h2>
-            {portfolio.skills.map((s, i) => (
-              <span key={i} className="badge bg-success me-2 mb-2 fs-6">{s}</span>
-            ))}
-          </section>
+      {/* Skills */}
+        <section className="mb-5">
+        <h2 className="text-success mb-3">Skills</h2>
+      {portfolio.skills.map((s, i) => (
+        <span
+        key={i}
+        className="badge bg-success me-2 mb-2 shadow-sm"
+          style={{
+            fontSize: "1.1rem",      // bigger text
+            padding: "12px 20px",    // more space inside
+            fontWeight: "500",       // semi-bold
+            borderRadius: "8px"      // slightly rounded corners
+              }}
+>
+{s}
+</span>
+  ))}
+  </section>
+
 
           {/* Qualifications */}
           <section className="mb-5">
