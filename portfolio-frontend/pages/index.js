@@ -67,7 +67,7 @@ export default function Home() {
         className="badge bg-success me-2 mb-2 shadow-sm"
           style={{
             fontSize: "1.1rem",      // bigger text
-            padding: "15px 30px",    // more space inside
+            padding: "15px 45px",    // more space inside
             fontWeight: "500",       // semi-bold
             borderRadius: "8px"      // slightly rounded corners
               }}
